@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_004018) do
+ActiveRecord::Schema.define(version: 2021_02_23_155524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "positions", force: :cascade do |t|
+    t.string "title"
+    t.integer "current_pay"
+    t.integer "previous_pay"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "semesters", force: :cascade do |t|
     t.integer "supervisor_id"
@@ -27,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_004018) do
     t.integer "student_id"
     t.integer "semester_id"
     t.string "day"
-    t.integer "time"
+    t.string "time"
     t.boolean "requested"
     t.integer "supervisor_id"
     t.boolean "scheduled"
