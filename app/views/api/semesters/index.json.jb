@@ -1,0 +1,8 @@
+@semesters.map do |semester|
+  {
+    id: semester.id,
+    supervisor_id: semester.supervisor_id,
+    start_date: semester.start_date,
+    end_date: semester.end_date,
+  }
+end
