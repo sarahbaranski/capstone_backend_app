@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
     get "/semesters" => "semesters#index"
     post "/shifts" => "shifts#create"
+    patch "/shifts/:id" => "shifts#update"
   end
 end

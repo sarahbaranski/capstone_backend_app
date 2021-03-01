@@ -16,4 +16,15 @@ class Api::ShiftsController < ApplicationController
       render json: { errors: @shift.errors.full_messages }, status: 422
     end
   end
+
+  def update
+    @shift = Shift.find_by(id: params["id"])
+    @shift.scheduled = params["scheduled"] || @shift.scheduled
+    @shift.total_required_staff = params["total_required_staff"] || @shift.total_required_staff
+    if @shift.save
+      render "show.json.jb"
+    else
+      render json: { errors: @shift.errors.full_message }, status: :unprocessable_entity
+    end
+  end
 end
