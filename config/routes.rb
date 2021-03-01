@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     post "/students" => "students#create"
     post "/sessions" => "sessions#create"
     get "/semesters" => "semesters#index"
+    post "/shifts" => "shifts#create"
   end
 end

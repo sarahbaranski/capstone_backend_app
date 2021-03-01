@@ -1,0 +1,11 @@
+{
+  id: @shift.id,
+  student_id: @shift.student_id,
+  semester_id: @shift.semester_id,
+  day: @shift.day,
+  time: @shift.time,
+  requested: @shift.requested,
+  supervisor_id: @shift.supervisor_id,
+  scheduled: @shift.scheduled,
+  total_required_staff: @shift.total_required_staff,
+}
