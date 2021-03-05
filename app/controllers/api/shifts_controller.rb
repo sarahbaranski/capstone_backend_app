@@ -1,6 +1,6 @@
 class Api::ShiftsController < ApplicationController
   def index
-    @shift = Shift.all
+    @shifts = Shift.all
     render "index.json.jb"
   end
 
