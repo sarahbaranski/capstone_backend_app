@@ -22,6 +22,11 @@ class Api::ShiftsController < ApplicationController
     end
   end
 
+  def show
+    @shift = Shift.find_by(id: params[:id])
+    render "show.json.jb"
+  end
+
   def update
     @shift = Shift.find_by(id: params["id"])
     @shift.scheduled = params["scheduled"] || @shift.scheduled
