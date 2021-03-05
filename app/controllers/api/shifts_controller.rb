@@ -1,4 +1,9 @@
 class Api::ShiftsController < ApplicationController
+  def index
+    @shift = Shift.all
+    render "index.json.jb"
+  end
+
   def create
     @shift = Shift.new({
       student_id: params["student_id"],
