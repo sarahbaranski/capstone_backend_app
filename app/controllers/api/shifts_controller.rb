@@ -5,6 +5,7 @@ class Api::ShiftsController < ApplicationController
   end
 
   def create
+    # shift = current_student.shift.where(status: )
     @shift = Shift.new({
       student_id: params["student_id"],
       semester_id: params["semester_id"],

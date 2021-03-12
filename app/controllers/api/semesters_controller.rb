@@ -1,6 +1,10 @@
 class Api::SemestersController < ApplicationController
   def index
-    @semesters = Semester.all
-    render "index.json.jb"
+    if current_student
+      @semesters = Semester.all
+      render "index.json.jb"
+    else
+      render json: []
+    end
   end
 end
