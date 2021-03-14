@@ -7,7 +7,7 @@ class Api::ShiftsController < ApplicationController
   def create
     # shift = current_student.shift.where(status: )
     @shift = Shift.new({
-      student_id: params["student_id"],
+      student_id: current_student.id,
       semester_id: params["semester_id"],
       day: params["day"],
       time: params["time"],
@@ -26,6 +26,59 @@ class Api::ShiftsController < ApplicationController
   def show
     @shift = Shift.find_by(id: params[:id])
     render "show.json.jb"
+  end
+
+  def create_all
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Monday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Monday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Monday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Tuesday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Tuesday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Tuesday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Wednesday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Wednesday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Wednesday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Thursday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Thursday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Thursday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Friday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Friday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Friday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Saturday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Saturday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Saturday", time: "evening")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Sunday", time: "morning")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Sunday", time: "afternoon")
+    shift.update(requested: false)
+    shift = Shift.find_or_create_by(student_id: current_student.id, semester_id: params[:semester_id], day: "Sunday", time: "evening")
+    shift.update(requested: false)
+    params[:checked_times].each do |checked_time|
+      day = checked_time.split(":")[0]
+      time = checked_time.split(":")[1]
+      shift = Shift.find_by(student_id: current_student.id, semester_id: params[:semester_id], day: day, time: time, requested: false)
+      shift.requested = true
+      shift.save
+    end
+    render json: { message: "All shifts created!" }
   end
 
   def update

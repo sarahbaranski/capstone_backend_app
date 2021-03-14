@@ -5,4 +5,8 @@ class Student < ApplicationRecord
   has_many :shifts
   has_many :semesters, through: :shifts
   belongs_to :position
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
