@@ -4,5 +4,7 @@
     supervisor_id: semester.supervisor_id,
     start_date: semester.start_date,
     end_date: semester.end_date,
+    name: semester.name,
+    shift_by_times: semester.shift_by_times,
   }
 end

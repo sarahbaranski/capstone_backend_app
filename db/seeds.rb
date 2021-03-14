@@ -9,8 +9,8 @@ Student.create!(first_name: "Anna", last_name: "Wong", email: "anna@test.com", p
 Student.create!(first_name: "Rachel", last_name: "Baranski", email: "rachel@test.com", phone_number: "555-5553456", password: "password", requested_hours: 15, position_id: 2)
 Student.create!(first_name: "Ryan", last_name: "Chapman", email: "ryan@test.com", phone_number: "555-555-4893", password: "password", requested_hours: 18, position_id: 1)
 
-Semester.create!(supervisor_id: 1, start_date: DateTime.new(2020, 9, 1), end_date: DateTime.new(2020, 12, 16))
-Semester.create!(supervisor_id: 2, start_date: DateTime.new(2021, 1, 11), end_date: DateTime.new(2021, 5, 1))
+Semester.create!(supervisor_id: 1, start_date: DateTime.new(2020, 9, 1), end_date: DateTime.new(2020, 12, 16), name: "Fall 2020")
+Semester.create!(supervisor_id: 2, start_date: DateTime.new(2021, 1, 11), end_date: DateTime.new(2021, 5, 1), name: "Spring 2021")
 
 Shift.create!(student_id: 1, semester_id: 1, day: "Monday", time: "morning", requested: true, supervisor_id: 1, scheduled: false, total_required_staff: 2)
 Shift.create!(student_id: 1, semester_id: 1, day: "Monday", time: "afternoon", requested: false, supervisor_id: 1, scheduled: false, total_required_staff: 2)
