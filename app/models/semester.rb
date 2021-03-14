@@ -30,7 +30,7 @@ class Semester < ApplicationRecord
       shifts.each do |shift|
         if shift.day == slot[:day] && shift.time == slot[:time]
           slot[:total_required_staff] = shift.total_required_staff
-          slot[:students] << { student_name: shift.student.full_name, shift_id: shift.id } if shift.requested
+          slot[:students] << { student_name: shift.student.full_name, shift_id: shift.id, scheduled: shift.scheduled } if shift.requested
         end
       end
     end
