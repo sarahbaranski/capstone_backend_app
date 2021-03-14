@@ -7,4 +7,9 @@ class Api::SemestersController < ApplicationController
       render json: []
     end
   end
+
+  def show
+    @semester = Semester.find_by(id: params[:id])
+    render "show.json.jb"
+  end
 end

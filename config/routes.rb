@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post "/students" => "students#create"
     post "/sessions" => "sessions#create"
     get "/semesters" => "semesters#index"
+    get "/semesters/:id" => "semesters#show"
     get "/shifts" => "shifts#index"
     post "/shifts" => "shifts#create"
     post "/shifts_all" => "shifts#create_all"
