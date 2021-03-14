@@ -6,6 +6,25 @@ class Semester < ApplicationRecord
     slots = [
       { day: "Monday", time: "morning", students: [] },
       { day: "Monday", time: "afternoon", students: [] },
+      { day: "Monday", time: "evening", students: [] },
+      { day: "Tuesday", time: "morning", students: [] },
+      { day: "Tuesday", time: "afternoon", students: [] },
+      { day: "Tuesday", time: "evening", students: [] },
+      { day: "Wednesday", time: "morning", students: [] },
+      { day: "Wednesday", time: "afternoon", students: [] },
+      { day: "Wednesday", time: "evening", students: [] },
+      { day: "Thursday", time: "morning", students: [] },
+      { day: "Thursday", time: "afternoon", students: [] },
+      { day: "Thursday", time: "evening", students: [] },
+      { day: "Friday", time: "morning", students: [] },
+      { day: "Friday", time: "afternoon", students: [] },
+      { day: "Friday", time: "evening", students: [] },
+      { day: "Saturday", time: "morning", students: [] },
+      { day: "Saturday", time: "afternoon", students: [] },
+      { day: "Saturday", time: "evening", students: [] },
+      { day: "Sunday", time: "morning", students: [] },
+      { day: "Sunday", time: "afternoon", students: [] },
+      { day: "Sunday", time: "evening", students: [] },
     ]
     slots.each do |slot|
       shifts.each do |shift|
