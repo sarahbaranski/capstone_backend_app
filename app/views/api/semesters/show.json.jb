@@ -1,7 +1,8 @@
 {
-  id: semester.id,
-  start_date: semester.start_date,
-  end_date: semester.end_date,
-  shifts: semester.shifts,
-  shift_by_times: semester.shifts_by_times,
+  id: @semester.id,
+  start_date: @semester.start_date,
+  end_date: @semester.end_date,
+  shifts: @semester.shifts,
+  name: @semester.name,
+  shift_by_times: @semester.shift_by_times,
 }
