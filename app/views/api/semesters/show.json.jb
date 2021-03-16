@@ -8,7 +8,14 @@
       day: shift.day,
       time: shift.time,
       total_required_staff: shift.total_required_staff,
-      shift_requests: shift.shift_requests,
+      shift_requests: shift.shift_requests.map do |shift_request|
+        {
+          id: shift_request.id,
+          requested: shift_request.requested,
+          scheduled: shift_request.scheduled,
+          student_name: shift_request.student.full_name,
+        }
+      end,
     }
   end,
   name: @semester.name,

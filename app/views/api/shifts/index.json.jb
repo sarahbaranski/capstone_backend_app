@@ -1,14 +1,11 @@
 @shifts.map do |shift|
   {
     id: shift.id,
-    student_id: shift.student_id,
-    student_name: shift.student.full_name,
     semester_id: shift.semester_id,
     day: shift.day,
     time: shift.time,
-    requested: shift.requested,
     supervisor_id: shift.supervisor_id,
-    scheduled: shift.scheduled,
     total_required_staff: shift.total_required_staff,
+    shift_requests: shift.shift_requests,
   }
 end
