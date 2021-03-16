@@ -2,7 +2,15 @@
   id: @semester.id,
   start_date: @semester.start_date,
   end_date: @semester.end_date,
-  shifts: @semester.shifts,
+  shifts: @semester.shifts.map do |shift|
+    {
+      id: shift.id,
+      day: shift.day,
+      time: shift.time,
+      total_required_staff: shift.total_required_staff,
+      shift_requests: shift.shift_requests,
+    }
+  end,
   name: @semester.name,
-  shift_by_times: @semester.shift_by_times,
+# shift_by_times: @semester.shift_by_times,
 }
