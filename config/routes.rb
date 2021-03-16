@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     post "/shifts_all" => "shifts#create_all"
     get "/shifts/:id" => "shifts#show"
     patch "/shifts/:id" => "shifts#update"
+    get "/shift_requests" => "shift_requests#create"
   end
 end

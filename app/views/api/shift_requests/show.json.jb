@@ -1,0 +1,6 @@
+{
+  id: @shift_request.id,
+  student_id: @shift_request.student_id,
+  requested: @shift_request.requested,
+  scheduled: @shift_request.scheduled,
+}
