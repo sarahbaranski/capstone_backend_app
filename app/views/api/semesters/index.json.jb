@@ -18,6 +18,6 @@
     # shift_by_times: semester.shift_by_times,
     }
   end,
-  # is_supervisor: !!current_supervisor,
+  is_supervisor: !!current_supervisor,
   is_student: !!current_student,
 }
