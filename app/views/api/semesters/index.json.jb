@@ -15,7 +15,6 @@
           shift_requests: shift.shift_requests,
         }
       end,
-    # shift_by_times: semester.shift_by_times,
     }
   end,
   is_supervisor: !!current_supervisor,
