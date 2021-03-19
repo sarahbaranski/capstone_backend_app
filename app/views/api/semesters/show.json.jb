@@ -16,6 +16,7 @@
           requested: shift_request.requested,
           scheduled: shift_request.scheduled,
           student_name: shift_request.student.full_name,
+          is_owner: current_student == shift_request.student,
         }
       end,
     }
