@@ -16,7 +16,27 @@ class Api::SemestersController < ApplicationController
       end_date: params[:end_date],
     )
     if @semester.save
-      Shift.create(semester_id: @semester.id, supervisor_id: 1, day: params[:day], time: params[:time], total_required_staff: params[:total_required_staff])
+      Shift.create!(semester_id: @semester.id, day: "Monday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Monday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Monday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Tuesday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Tuesday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Tuesday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Wednesday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Wednesday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Wednesday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Thursday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Thursday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Thursday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Friday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Friday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Friday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Saturday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Saturday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Saturday", time: "evening", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Sunday", time: "morning", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Sunday", time: "afternoon", supervisor_id: 1, total_required_staff: 0)
+      Shift.create!(semester_id: @semester.id, day: "Sunday", time: "evening", supervisor_id: 1, total_required_staff: 0)
       render "show.json.jb"
     else
       render json: { errors: @semester.errors.full_messages }, status: 422
