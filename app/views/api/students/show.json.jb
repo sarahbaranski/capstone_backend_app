@@ -6,4 +6,5 @@
   phone_number: @student.phone_number,
   requested_hours: @student.requested_hours,
   position_id: @student.position_id,
+  work_study: @student.work_study,
 }

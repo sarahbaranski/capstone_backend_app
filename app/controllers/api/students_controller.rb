@@ -8,6 +8,7 @@ class Api::StudentsController < ApplicationController
       password_confirmation: params[:password_confirmation],
       position_id: 1,
       requested_hours: 20,
+      work_study: 1720,
     )
     if student.save
       render json: { message: "Student created successfully" }, status: :created
