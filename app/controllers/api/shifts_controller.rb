@@ -64,6 +64,7 @@ class Api::ShiftsController < ApplicationController
     @shift = Shift.find_by(id: params["id"])
     @shift.scheduled = params["scheduled"] || @shift.scheduled
     @shift.total_required_staff = params["total_required_staff"] || @shift.total_required_staff
+
     if @shift.save
       render "show.json.jb"
     else

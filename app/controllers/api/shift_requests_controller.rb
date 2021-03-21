@@ -31,6 +31,16 @@ class Api::ShiftRequestsController < ApplicationController
     render "show.json.jb"
   end
 
+  def notify
+    client = Twilio::REST::Client.new
+    client.messages.create({
+      from: Rails.application.credentials.twilio_phone_number,
+      to: "+16306320399",
+      body: "The current schedule has been posted.",
+    })
+    render json: { message: "Students have been notified." }
+  end
+
   def destroy
     shift_request = ShiftRequest.find_by(id: params[:id])
     shift_request.destroy

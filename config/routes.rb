@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get "/shifts/:id" => "shifts#show"
     patch "/shifts/:id" => "shifts#update"
     get "/shift_requests" => "shift_requests#create"
+    get "/shift_requests/notify" => "shift_requests#notify"
     patch "/shift_requests/:id" => "shift_requests#update"
     delete "/shift_requests/:id" => "shift_requests#destroy"
     post "/shift_requests_all" => "shift_requests#create_all"
