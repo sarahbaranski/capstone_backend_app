@@ -4,7 +4,7 @@
   id: @semester.id,
   start_date: @semester.start_date,
   end_date: @semester.end_date,
-  shifts: @semester.shifts.map do |shift|
+  shifts: @semester.shifts.order(:id).map do |shift|
     {
       id: shift.id,
       day: shift.day,
