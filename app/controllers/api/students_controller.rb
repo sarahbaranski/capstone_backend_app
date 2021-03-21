@@ -7,11 +7,17 @@ class Api::StudentsController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       position_id: 1,
+      requested_hours: 20,
     )
     if student.save
       render json: { message: "Student created successfully" }, status: :created
     else
       render json: { errors: student.errors.full_messages }, status: :bad_request
     end
+  end
+
+  def show
+    @student = Student.find_by(id: params[:id])
+    render "show.json.jb"
   end
 end

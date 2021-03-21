@@ -1,0 +1,9 @@
+{
+  id: @student.id,
+  first_name: @student.first_name,
+  last_name: @student.last_name,
+  email: @student.email,
+  phone_number: @student.phone_number,
+  requested_hours: @student.requested_hours,
+  position_id: @student.position_id,
+}
