@@ -7,4 +7,5 @@
   requested_hours: @student.requested_hours,
   position_id: @student.position_id,
   work_study: @student.work_study,
+  hours_each_semester: @student.hours_each_semester,
 }
