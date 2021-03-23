@@ -5,9 +5,9 @@ Position.create!(title: "Equipment Facilitator", current_pay: 12, previous_pay: 
 Position.create!(title: "Equipment Supervisor", current_pay: 12.50, previous_pay: 12)
 Position.create!(title: "Shift Lead", current_pay: 13, previous_pay: 12)
 
-Student.create!(first_name: "Anna", last_name: "Wong", email: "anna@test.com", phone_number: "555-5557896", password: "password", requested_hours: 20, position_id: 3)
-Student.create!(first_name: "Rachel", last_name: "Baranski", email: "rachel@test.com", phone_number: "555-5553456", password: "password", requested_hours: 15, position_id: 2)
-Student.create!(first_name: "Ryan", last_name: "Chapman", email: "ryan@test.com", phone_number: "555-555-4893", password: "password", requested_hours: 18, position_id: 1)
+Student.create!(first_name: "Anna", last_name: "Wong", email: "anna@test.com", phone_number: "555-5557896", password: "password", requested_hours: 20, position_id: 3, work_study: 3500)
+Student.create!(first_name: "Rachel", last_name: "Baranski", email: "rachel@test.com", phone_number: "555-5553456", password: "password", requested_hours: 15, position_id: 2, work_study: 2750)
+Student.create!(first_name: "Ryan", last_name: "Chapman", email: "ryan@test.com", phone_number: "555-555-4893", password: "password", requested_hours: 18, position_id: 1, work_study: 3000)
 
 Semester.create!(supervisor_id: 1, start_date: DateTime.new(2020, 9, 1), end_date: DateTime.new(2020, 12, 16), name: "Fall 2020")
 Semester.create!(supervisor_id: 2, start_date: DateTime.new(2021, 1, 11), end_date: DateTime.new(2021, 5, 1), name: "Spring 2021")
