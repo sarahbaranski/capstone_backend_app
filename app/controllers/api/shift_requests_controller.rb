@@ -36,7 +36,7 @@ class Api::ShiftRequestsController < ApplicationController
     client.messages.create({
       from: Rails.application.credentials.twilio_phone_number,
       to: "+16306320399",
-      body: "The current schedule has been posted.",
+      body: "The current schedule has been posted. Please login in to www.wami.com/login to view the new schedule.",
     })
     render json: { message: "Students have been notified." }
   end
